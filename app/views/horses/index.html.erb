@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>性別</th>
+      <th>通算成績</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @horses.each do |horse| %>
+      <tr>
+        <td><%= horse.name %></td>
+        <td><%= horse.sex %></td>
+        <td><%= horse.result %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

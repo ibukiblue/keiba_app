@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.registration {
+    margin: 20px 20vw;
+    padding: 50px;
+    text-align: center;
+    background-color: rgb(235, 233, 233);
+}
+.registration div {
+    margin: 30px 0;
+}
+
+.actions input {
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: dodgerblue;
+    box-shadow: 0 0 8px rgb(87, 87, 87);
+    transition: 0.7s;
+}
+.actions input:hover {
+    box-shadow: none;
+}

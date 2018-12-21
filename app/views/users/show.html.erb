@@ -1,0 +1,35 @@
+<div class="mypage">
+    <div class="mypage-top">
+        <h3>マイページトップ</h3>
+        <button><%= link_to 'プロフィール編集', edit_user_registration_path %></button>
+    </div>
+    <div class="mypage-info">
+        <div class="mypage-img"></div>
+        <div>
+            <%= "ようこそ #{current_user.username} さん" %>
+        </div>
+        <div>
+            <%= "Email : #{current_user.email}" %>
+        </div>
+    </div>
+    <div class="mypage-log">
+        <%= form_with model:@log, url: { :controller => :log, :action => :create}, local: true do |f| %>
+            <div class="field">
+                <%= f.label :diary %>
+                <%= f.text_field :diary %>
+            </div>
+            <div class="action">
+                <%= f.submit %>
+            </div>
+        <% end %>
+    </div>
+    <div class="mypage-diary">
+        <h4>最近のひとこと</h4>
+        <% @logs.each do |log| %>
+            <p><%= l(log.created_at, format: :long) %></p>
+            <p><%= log.diary %></p>
+        <% end %>
+    </div>
+</div>
+
+<button><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></button>

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+h1 {
+    margin: 20px 20px;
+}
+
+.sign {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in {
+    text-align: center;
+    margin: auto;
+    padding: 2px 20px;
+    border: solid 1px blue;
+    height: 180px;
+}
+.sign-in h3 {
+    background-color: blue;
+    color: #ffffff;
+    margin: 5px 0 20px;
+}
+.sign-in p {
+    margin-bottom: 30px;
+}
+button {
+    height: 50px;
+    width: 144px;
+    box-shadow: 0 0 8px gray;
+    transition: 0.4s;
+}
+button a {
+    display: block;
+    height: 100%;
+    line-height: 50px;
+}
+button:hover {
+    box-shadow: none;
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+.sign-up {
+    text-align: center;
+    margin: auto;
+    padding: 2px 20px;
+    border: solid 1px blue;
+    height: 180px;
+}
+.sign-up h3 {
+    background-color: green;
+    color: #ffffff;
+    margin: 5px 0 20px;
+}
+.sign-up p {
+    margin-bottom: 30px;
+}
+
+.sign-out {
+    text-align: right;
+    margin: 40px;
+}
+.sign-out button {
+    height: 25px;
+    width: 100px;
+    box-shadow: 0 0 8px gray;
+    transition: 0.4s;
+}
+.sign-out button a {
+    display: block;
+    height: 100%;
+    line-height: 25px;
+}
+.sign-out button:hover {
+    box-shadow: none;
+}
