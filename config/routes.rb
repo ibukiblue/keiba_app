@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root to: "home#index"
   resource :user, only: %i(show), path: 'profile'
   devise_for :users
-  resources :log, only: %i(create new edit show destroy update)
+  resources :logs, only: %i(create new edit show destroy update)
 end

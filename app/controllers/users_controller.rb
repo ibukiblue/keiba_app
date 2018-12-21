@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
-    @logs = Log.all
     @log = Log.new
+    @user = User.find_by(params[:id])
   end
 end

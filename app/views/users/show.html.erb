@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="mypage-log">
-        <%= form_with model:@log, url: { :controller => :log, :action => :create}, local: true do |f| %>
+        <%= form_with model:@log, url: { :controller => :logs, :action => :create}, local: true do |f| %>
             <div class="field">
                 <%= f.label :diary %>
                 <%= f.text_field :diary %>
@@ -25,7 +25,7 @@
     </div>
     <div class="mypage-diary">
         <h4>最近のひとこと</h4>
-        <% @logs.each do |log| %>
+        <% current_user.logs.each do |log| %>
             <p><%= l(log.created_at, format: :long) %></p>
             <p><%= log.diary %></p>
         <% end %>
