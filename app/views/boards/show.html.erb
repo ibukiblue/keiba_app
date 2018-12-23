@@ -4,3 +4,15 @@
 <%= link_to '編集', edit_board_path(@board.id) %>
 <%= link_to '削除', board_path(@board.id), method: :delete, data: {confirm: 'OK?'} %>
 <hr>
+<%= form_with model:@comment, url: board_comments_path(@board, @comment), method: :post, local: true do |f| %>
+    <div class="field">
+        <%= f.text_area :comment %>
+    </div>
+    <div class="action">
+        <%= f.submit :comment %>
+    </div>
+<% end %>
+<% @comment.each do |comment| %>
+    <p><%= l(comment.created_at, format: :long) %></p>
+    <p><%= comment.comment %></p>
+<% end %>

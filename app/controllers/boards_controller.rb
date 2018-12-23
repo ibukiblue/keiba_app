@@ -11,14 +11,15 @@ class BoardsController < ApplicationController
     @board = Board.new(board_params)
     @board.user = current_user
     if @board.save
-      redirect_to boards_path
+      redirect_to boards_path(@board)
     else
-      render :new
+      render new
     end
   end
 
   def show
     @board = Board.find(params[:id])
+    @comment = Comment.all
   end
 
   def edit
@@ -28,9 +29,9 @@ class BoardsController < ApplicationController
   def update
     @board = Board.find(params[:id])
     if @board.update(board_params)
-      redirect_to boards_path
+      redirect_to boards_path(@board)
     else
-      render :edit
+      render new
     end
   end
 
