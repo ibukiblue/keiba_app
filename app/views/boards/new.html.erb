@@ -1,0 +1,15 @@
+ <%= link_to "スレッド一覧に戻る", boards_path %>
+ <hr>
+ <h1>スレッドを作成する</h1>
+ <div>
+    <%= " #{current_user.username} " %>
+ </div>
+<%= form_with model:@board, method: :post, local: true do |f| %>
+    <div class="field">
+        <p><%= f.label :title %></p>
+        <%= f.text_field :title %>
+    </div>
+    <div class="action">
+        <%= f.submit %>
+    </div>
+<% end %>

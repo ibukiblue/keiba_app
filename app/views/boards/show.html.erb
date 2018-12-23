@@ -1,0 +1,6 @@
+<%= link_to 'スレッド一覧に戻る', boards_path %>
+<hr>
+<h3><%= @board.title %></h3>
+<%= link_to '編集', edit_board_path(@board.id) %>
+<%= link_to '削除', board_path(@board.id), method: :delete, data: {confirm: 'OK?'} %>
+<hr>

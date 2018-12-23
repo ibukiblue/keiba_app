@@ -1,0 +1,13 @@
+<%= link_to @board.title, board_path(@board.id) %>
+<hr>
+<h1>スレッド編集</h1>
+
+<%= form_with model: @board, local: true do |f| %>
+    <div class="field">
+        <p><%= f.label :title %></p>
+        <%= f.text_field :title %>
+    </div>
+    <div class="action">
+        <%= f.submit %>
+    </div>
+<% end %>
