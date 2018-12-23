@@ -12,7 +12,7 @@
         <%= f.submit :comment %>
     </div>
 <% end %>
-<% @comment.each do |comment| %>
+<% @comment.reverse.each do |comment| %>
     <p><%= l(comment.created_at, format: :long) %></p>
     <p><%= comment.comment %></p>
 <% end %>
