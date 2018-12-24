@@ -1,6 +1,10 @@
  <%= link_to "スレッド新規作成", new_board_path %>
 
   <hr>
- <% @boards.each do |board| %>
-    <p><%= link_to board.title, board_path(board.id) %></p> 
- <% end %>
+<div class="board">
+      <% @boards.each do |board| %>
+      <div class="board-content">
+         <p><%= link_to board.title, board_path(board.id) %></p> 
+      </div>
+      <% end %>
+</div>

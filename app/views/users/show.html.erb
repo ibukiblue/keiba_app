@@ -26,8 +26,11 @@
     <div class="mypage-diary">
         <h4>最近のひとこと</h4>
         <% current_user.logs.each do |log| %>
-            <p><%= l(log.created_at, format: :long) %></p>
-            <p><%= log.diary %></p>
+            <div>
+                <p><%= l(log.created_at, format: :long) %></p>
+                <p><%= log.diary %></p>
+                <p><%= link_to '削除', log_path(log.id), method: :delete, data: {confirm: 'OK?'} %></p>
+            </div>
         <% end %>
     </div>
 </div>
